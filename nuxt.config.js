@@ -47,12 +47,17 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
   ],
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://nuxt-project-fd481-default-rtdb.firebaseio.com',
+    credentials: false
+  },
 
   /*
   ** Build configuration
   */
-  build: {
+  build: { 
     /*
     ** You can extend webpack config here
     */
@@ -61,10 +66,14 @@ module.exports = {
     }
   },
   env: {
-    baseUrl: process.env.BASE_URL ||'https://nuxt-project-fd481-default-rtdb.firebaseio.com/' 
+    baseUrl: process.env.BASE_URL || 'https://nuxt-project-fd481-default-rtdb.firebaseio.com',
+    fbAPIKey: 'AIzaSyDdhi6eA-olRmMD-e8IGHMLOgb6QvfBwvQ'
   },
   transition: {
     name: 'fade',
     mode: 'out-in'
-  }
+  },
+  // router: {
+  //   middleware: 'log'
+  // }
 }
